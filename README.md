@@ -38,6 +38,16 @@ Como **Junior GreenOps Developers**, nuestro encargo es realizar una auditoría 
 
 Para obtener una estimación objetiva del impacto ambiental se han utilizado las siguientes herramientas:
 
+#### Lighthouse
+|![lighthouse-1](imagenes/lighthouse-1.png) | ![lighthouse-2](imagenes/lighthouse-2.png)|
+|---|---|
+
+#### Website Carbon Calculator
+![Website_Carbon_Calculator](imagenes/Website_Carbon_Calculator.png)
+
+#### PageSpeed Insights
+![PageSpeed_Insights](imagenes/PageSpeed_Insights.png)
+
 | Herramienta | Métrica obtenida |
 |---|---|
 | **Website Carbon Calculator** | ~0,80 g de CO₂ por visita · Peor que el 60% de páginas testadas |
