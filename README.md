@@ -11,7 +11,7 @@
 
 ---
 
-##Índice
+## Índice
 1. [Contexto y empresa auditada](#1-contexto-y-empresa-auditada)
 2. [Fase 1 – Dimensión Ambiental (A)](#2-fase-1--dimensión-ambiental-a)
 3. [Fase 2 – Dimensión Social y Accesibilidad (S)](#3-fase-2--dimensión-social-y-accesibilidad-s)
