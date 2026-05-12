@@ -116,3 +116,16 @@ La respuesta es sí, de forma clara. La web de la Escuela Española de Vela EEV 
 
 ---
 
+## 3. Fase 2 – Dimensión Social y Accesibilidad (S)
+
+### 3.1 Test de accesibilidad
+
+Herramientas utilizadas: **WAVE Web Accessibility Evaluation Tool** y **Lighthouse**. 
+> Lo hemos utilizado antes en los primeros puntos
+
+| Herramienta | Resultado |
+|---|---|
+| **Lighthouse Accessibility** | ~65 / 100 |
+| **WAVE** | 4+ errores graves aparece en rojo, 8+ alertas (amarillo) |
+
+---
