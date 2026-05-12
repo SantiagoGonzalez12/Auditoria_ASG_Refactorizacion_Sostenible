@@ -98,3 +98,21 @@ Adicionalmente, hay un segundo iframe embebido del widget meteorológico de `wea
 
 ---
 
+### 2.3 ¿Sufre la web de "inflación de software"?
+
+La respuesta es sí, de forma clara. La web de la Escuela Española de Vela EEV en su web presenta múltiples síntomas de subidas de software o como se puede decir tecnicamnete *software bloat*:
+
+1. **Constructor de páginas pesado:** Elementor es conocido por generar HTML innecesariamente profundo y cargar recursos que no se usan en cada página concreta.
+
+2. **Imágenes no optimizadas:** Las fotografías tienen nombres de fichero del tipo `IMG_X`, indicativos de que se subieron directamente sin procesamiento previo eso lo que consta que no esta optimizada tal como debería de ser para no pesara demasiado.
+
+3. **GIF animado en el footer** (`logo-visas-gif.gif`): el formato GIF tiene una eficiencia de compresión muy inferior a WebP animado o SVG. Este fichero pesa varias veces más de lo que debería ademas que el usuario cuando entra ya tiene la pagina en movimiento que es decir que cuando el suuario ya se de la opagina principal el GIF sigue estando en movimiento consumiendo carga.
+
+4. **Iframes de terceros sin lazy loading:** Tres iframes externos (cámara, meteorología, mapa) como hemos mencionado antes de tal forma que se cargan al arrancar aunque el usuario solo visite la cabecera de la página.
+
+5. **Plugin de traducción (TranslatePress)** este plugin de WordpRess lo que hace es ser conocido es que se carga flags e inyecta scripts en todas las páginas, aunque el usuario no cambie de idioma.
+
+> **Conclusión ambiental:** La web consume más del doble de lo que debería.
+
+---
+
