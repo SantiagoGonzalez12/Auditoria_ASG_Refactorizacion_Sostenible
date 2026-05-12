@@ -63,3 +63,38 @@ Según el informe de The Shift Project (2023), el sector digital representa ya e
 ### 2.2 Identificación de los 3 recursos más pesados (Bloatware)
 
 Análisis realizado con la pestaña **Network** de Chrome DevTools, filtrando por tamaño descendente:
+#### Recurso 1 — Imágenes de galería en JPG/PNG sin optimizar
+
+La galería principal contiene imágenes directamente exportadas de dispositivos móviles, como `IMG_9883-scaled.jpg` o `IMG_6307-1024x682.png`, con pesos que superan los 800 KB por imagen lo cual hace que sea mas lento el tiempo de carga. Ninguna está en formato moderno (WebP/AVIF) ni tiene dimensiones adaptadas al tamaño en pantalla.
+
+```
+Recurso:  /wp-content/uploads/2018/11/IMG_9883-scaled.jpg
+Tipo: image/jpeg
+Peso:  ~820 KB
+```
+
+---
+
+#### Recurso 2 — Bundles de Elementor (CSS + JavaScript)
+
+Elementor carga múltiples hojas de estilo y archivos JavaScript de forma global, independientemente de si los módulos que los requieren aparecen o no en la página actual. Esto genera lo que se conoce como **CSS bloat**: estilos descargados que nunca se aplican.
+
+---
+
+####  Recurso 3 — iFrame de cámara en vivo con autoplay
+
+La página principal esta dentro una cámara en tiempo real del proveedor externo `ipcamlive.com` con los parámetros `autoplay=1` y `mute=1`. Esto significa que la cámara comienza a transmitir vídeo en el momento en que el usuario carga la página, aunque no tenga ningún interés en verla eso no tiene sentido esta iniciando una cosa que alomejor el usuario no tiene sentido.
+
+```html
+<!-- Código actual: carga automática e inmediata del stream de vídeo -->
+<iframe
+  src="https://g0.ipcamlive.com/player/player.php?alias=eevislantilla&skin=white&autoplay=1&mute=1"
+  width="640"
+  height="360">
+</iframe>
+```
+
+Adicionalmente, hay un segundo iframe embebido del widget meteorológico de `weatherlink.com` y un tercer iframe de Google Maps al final de la página, que se cargan los tres de forma simultánea y sin lazy loading.
+
+---
+
