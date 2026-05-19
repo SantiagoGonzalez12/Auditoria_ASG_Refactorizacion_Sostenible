@@ -277,7 +277,103 @@ done
 ```
 
 ---
+#### 5.1.2 Implementación de Lazy Loading
 
+El **Lazy Loading** esto significa,  que las imágenes que fuera del área visible no se descarguen hasta que el usuario se aproxima a ellas. eso reduce el peso de la pagina
+```html
+
+<!--  Antes: podemos observar todas las imágenes se descargan al cargar      -->
+
+<img src="/wp-content/uploads/2019/04/catamaran.png" alt="">
+<img src="/wp-content/uploads/2019/04/paddle.png" alt="">
+<img src="/wp-content/uploads/2019/04/summer_camp.png" alt="">
+
+<!-- Despues: podemos observar en este codigo con el anterior que se descargan al acercarse al viewport   -->
+
+<img
+  src="/assets/img/catamaran-actividad.webp"
+  alt="Actividad de catamarán disponible en la Escuela Española de Vela"
+  loading="lazy"
+  decoding="async"
+  width="150"
+  height="150">
+
+<img
+  src="/assets/img/paddlesurf-actividad.webp"
+  alt="Alquiler de tablas de paddlesurf en Islantilla"
+  loading="lazy"
+  decoding="async"
+  width="150"
+  height="150">
+
+<!--
+  Awui vamos hacer un marca especila en donde las imágenes "above the fold" osea visibles sin scroll
+  no deberian tener lazy loading, ya que reatrasa la carga de lso eementos de las paginas 
+  El logo y la imagen hero se cargan con prioridad alta:
+-->
+<img
+  src="/assets/img/logo-eev.webp"
+  alt="Escuela Española de Vela – Inicio"
+  loading="eager"
+  fetchpriority="high"
+  width="200"
+  height="80">
+```
+
+---
+
+#### 5.1.2 Scripts externos: eliminar, aplazar ...
+
+| Script / Recurso | Acción propuesta | Ahorro estimado |
+|---|---|---|
+| **Elementor CSS/JS** | Activar modo "External File" + eliminar CSS no usado con PurgeCSS | ~400 KB |
+| **Google Fonts** | Auto-hospedar con `@font-face` local | Elimina 1 petición DNS externa |
+| **TranslatePress** | Cargar scripts solo cuando el usuario interactúa con el selector de idioma | ~80 KB por visita |
+| **Google Maps** | Añadir `loading="lazy"` | No se carga hasta que el usuario hace scroll hasta el mapa |
+| **Widget meteorológico Weatherlink** | Añadir `loading="lazy"` al iframe | Igual, está fuera del viewport inicial |
+
+```html
+<!-- Antes en esta petición se utilizaba el dominio externo de Google en cada carga -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Despues esta fuente esta servida desde el propio servidor de la escuela de vela -->
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;     
+    src: url('/assets/fonts/open-sans-regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/assets/fonts/open-sans-bold.woff2') format('woff2');
+  }
+</style>
+
+
+<!-- Iframe de mapa con lazy loading , osea ell mapa que está en el footer, no tiene sentido cargarlo ya que no lo pide el usuario     -->
+
+<!--  Antes el mapa carga siempre, esté visible o no -->
+<iframe src="https://maps.google.com/maps?q=EEV+Islantilla&output=embed"
+        width="400" height="300"></iframe>
+
+<!-- Despues para eviatr lazy loading nativo del iframe + título accesible -->
+<iframe
+  src="https://maps.google.com/maps?q=EEV+Islantilla&output=embed"
+  width="400"
+  height="300"
+  loading="lazy"
+  title="Ubicación de la Escuela Española de Vela en Islantilla, Huelva"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+```
+
+---
 
 ---
 
