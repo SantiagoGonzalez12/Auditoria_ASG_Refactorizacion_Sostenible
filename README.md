@@ -39,8 +39,9 @@ Como **Junior GreenOps Developers**, nuestro encargo es realizar una auditoría 
 Para obtener una estimación objetiva del impacto ambiental se han utilizado las siguientes herramientas:
 
 #### Lighthouse
-|![lighthouse-1](imagenes/lighthouse-1.png) | ![lighthouse-2](imagenes/lighthouse-2.png)|
-|---|---|
+![lighthouse-1](imagenes/lighthouse-1.png) 
+
+![lighthouse-2](imagenes/lighthouse-2.png)
 
 #### Website Carbon Calculator
 ![Website_Carbon_Calculator](imagenes/Website_Carbon_Calculator.png)
@@ -163,7 +164,7 @@ Un lector de pantalla como *NVDA* o *JAWS*, usado por personas con discapacidad 
 
 <img src="/wp-content/uploads/2022/07/descarga-150x150.jpg"
      alt="">
-     <!--  Imagen de categoría "Wing Foil" sin ninguna descripción ya que es demaisado reciente dentro de la web lo que constituye que aun no lo han actulizado la informacioón dentro de la pagina -->
+     <!--  Imagen sin ninguna descripción ya que es demaisado reciente dentro de la web, lo que dice que aun no lo han actualizado la información dentro de la pagina -->
 
 
 <!-- DESPUÉS: el alt describe de forma clara el contenido que hay dentro -->
@@ -193,7 +194,7 @@ Un lector de pantalla como *NVDA* o *JAWS*, usado por personas con discapacidad 
 ### 3.3 Problema grave 2 - Bajo contraste de texto sobre imágenes
 Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla`) se muestran con un texto blanco directamente en la imagen de colores. En varias partes de la imagen, el contraste entre el texto y esta es muy pobre, por lo que no se diferencian muy bien y dan lugar a confusión.
 
-```
+```html
 /* ANTES: texto blanco puro sobre imagen de fondo variable */
 
 .hero-title {
