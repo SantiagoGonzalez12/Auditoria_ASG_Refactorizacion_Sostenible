@@ -599,3 +599,89 @@ AAplicanbdolo a esta web, si reducimos el peso de `escuela-vela.com` de 4 MB a 1
 | **Chrome DevTools – Network** | Análisis de recursos y peso de la página | Incluido en Chrome/Edge |
 | **WebAIM Contrast Checker** | Verificación de ratios de contraste WCAG | [webaim.org/resources/contrastchecker](https://webaim.org/resources/contrastchecker/) |
 | **cwebp / ffmpeg** | Conversión de imágenes a WebP y AVIF | [developers.google.com/speed/webp](https://developers.google.com/speed/webp) |
+
+---
+## 7. Fuentes y referencias
+
+### Estándares y normativa oficial
+
+- **W3C – WCAG 2.2 (2023)**  
+  *Web Content Accessibility Guidelines 2.2 – W3C Recommendation*  
+  https://www.w3.org/TR/WCAG22/
+
+- **W3C – Understanding WCAG 2.2**  
+  *Guía de comprensión detallada de cada criterio de éxito WCAG*  
+  https://www.w3.org/WAI/WCAG22/Understanding/
+
+- **WAI-ARIA Authoring Practices Guide (APG)**  
+  *Patrones y ejemplos de ARIA para interfaces accesibles*  
+  https://www.w3.org/WAI/ARIA/apg/
+
+- **RGPD – Reglamento (UE) 2016/679**  
+  *Reglamento General de Protección de Datos — texto completo*  
+  https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32016R0679
+
+- **CEPD – Directrices 05/2020 sobre consentimiento**  
+  *Comité Europeo de Protección de Datos — diseño simétrico de opciones*  
+  https://edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_es
+
+- **AEPD – Guía sobre el uso de las cookies (2023)**  
+  *Agencia Española de Protección de Datos*  
+  https://www.aepd.es/guias/guia-cookies.pdf
+
+- **Real Decreto 1112/2018** sobre accesibilidad de los sitios web y aplicaciones del sector público  
+  https://www.boe.es/eli/es/rd/2018/09/07/1112
+
+### Green Software Engineering
+
+- **Green Software Foundation – Principles of Green Software Engineering**  
+  *Los 8 principios del software sostenible (energía, carbono, hardware…)*  
+  https://learn.greensoftware.foundation/
+
+- **Green Software Foundation – Software Carbon Intensity (SCI) Specification**  
+  *Estándar ISO para medir la huella de carbono del software*  
+  https://sci.greensoftware.foundation/
+
+- **The Shift Project – "Lean ICT: Towards Digital Sobriety" (2023)**  
+  *El sector digital representa el 4% de las emisiones globales de GEI*  
+  https://theshiftproject.org/en/article/lean-ict-our-new-report/
+
+- **Website Carbon Calculator – Metodología de cálculo**  
+  *Cómo se estiman los gramos de CO₂ por visita*  
+  https://www.websitecarbon.com/how-does-it-work/
+
+### Rendimiento web y optimización
+
+- **Google – Core Web Vitals (LCP, FID, CLS)**  
+  https://web.dev/articles/vitals
+
+- **Google Developers – Lazy loading de imágenes**  
+  *Guía oficial del atributo `loading="lazy"`*  
+  https://web.dev/articles/lazy-loading-images
+
+- **Google Developers – Usar imágenes en formatos modernos (WebP, AVIF)**  
+  https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/
+
+- **MDN Web Docs – `<picture>`: The Picture element**  
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture
+
+- **MDN Web Docs – Service Worker API**  
+  https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+
+- **MDN Web Docs – Cache-Control HTTP header**  
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control
+
+### Paradoja de Jevons y efecto rebote digital
+
+- **Wikipedia – Paradoja de Jevons**  
+  *Origen histórico y aplicaciones modernas del efecto rebote tecnológico*  
+  https://es.wikipedia.org/wiki/Paradoja_de_Jevons
+
+- **Freitag, C. et al. – "The real climate and transformative impact of ICT" (2021)**  
+  *Resources, Conservation and Recycling — estudio sobre efecto rebote en TIC*  
+  https://doi.org/10.1016/j.resconrec.2021.105901
+
+- **Pihkola et al. – "Evaluating the energy consumption of mobile data transfer" (2018)**  
+  *Comparativa de consumo energético por tipo de contenido digital*  
+  https://doi.org/10.3390/fi10040040
+
