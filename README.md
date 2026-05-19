@@ -374,6 +374,103 @@ El **Lazy Loading** esto significa,  que las imágenes que fuera del área visib
 ```
 
 ---
+### 5.3 HTML semántico y estructura accesible (Dimensión S)
+
+```html
+<!-- Antes la estructura HTML generada por Elementor  con Divs anidados sin significado semántico  ninguna ya que no tenian sentido como estaba estructurado -->
+
+<div class="elementor-section elementor-top-section">
+  <div class="elementor-container">
+    <div class="elementor-row">
+      <div class="elementor-widget-container">
+        <div class="elementor-nav-menu">
+          <a href="/wing-foil-2/">Wing Foil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Despues el html semántico los lectores de pantalla y buscadores estan correctamente la estructura de la página  -->
+
+<!-- Cabecera del sitio con role explícito -->
+<header role="banner">
+
+  <a href="/" aria-label="Escuela Española de Vela – Ir a la página de inicio">
+    <img
+      src="/assets/img/logo-eev.webp"
+      alt="Logotipo de la Escuela Española de Vela"
+      width="200" height="80"
+      loading="eager"
+      fetchpriority="high">
+  </a>
+
+  <!-- Navegación principal con label descriptivo  -->
+  <nav aria-label="Menú principal de navegación">
+    <ul role="list">
+      <li><a href="/wing-foil-2/">Wing Foil</a></li>
+      <li><a href="/windsurf/">Windsurf</a></li>
+      <li><a href="/catamaran/">Catamarán</a></li>
+      <li>
+        <!-- Submenú con atributos para indicar expansión -->
+        <button aria-haspopup="true" aria-expanded="false">
+          Campamentos
+        </button>
+        <ul role="list">
+          <li><a href="/summer-camp/">Summer Camp</a></li>
+          <li><a href="/mini-camp/">Mini Camp</a></li>
+        </ul>
+      </li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<main id="content" tabindex="-1">
+
+  <!-- Sección hero con heading jerárquico -->
+  <section aria-labelledby="hero-titulo">
+    <h1 id="hero-titulo">Escuela Española de Vela – Islantilla</h1>
+    <p>Más de 30 años de experiencia en actividades náuticas en la costa de Huelva.</p>
+  </section>
+
+  <!-- Sección de actividades con su propio heading -->
+  <section aria-labelledby="actividades-titulo">
+    <h2 id="actividades-titulo">Nuestras actividades</h2>
+    <ul class="actividades-grid" role="list">
+      <li>
+        <article>
+          <a href="/wing-foil-2/">
+            <img
+              src="/assets/img/wing-foil-actividad.webp"
+              alt="Clase de Wing Foil en la Escuela Española de Vela de Islantilla"
+              loading="lazy"
+              width="150" height="150">
+            <h3>Wing Foil</h3>
+          </a>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- Pie de página con role contentinfo -->
+<footer role="contentinfo">
+  <p>© 2025 Escuela Española de Vela | Empresa de Turismo Activo AT/HU/00092</p>
+  <nav aria-label="Navegación secundaria del pie de página">
+    <ul role="list">
+      <li><a href="/aviso-legal/">Aviso Legal y Política de Privacidad</a></li>
+      <li><a href="/politica-de-cookies">Política de cookies</a></li>
+    </ul>
+  </nav>
+</footer>
+```
+
+---
 
 ---
 
