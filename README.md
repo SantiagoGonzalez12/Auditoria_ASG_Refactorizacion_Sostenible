@@ -190,6 +190,61 @@ Un lector de pantalla como *NVDA* o *JAWS*, usado por personas con discapacidad 
 
 ---
 
+### 3.3 Problema grave 2 - Bajo contraste de texto sobre imágenes
+Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla`) se muestran con un texto blanco directamente en la imagen de colores. En varias partes de la imagen, el contraste entre el texto y esta es muy pobre, por lo que no se diferencian muy bien y dan lugar a confusión.
+
+```
+/* ANTES: texto blanco puro sobre imagen de fondo variable */
+
+.hero-title {
+  color: #ffffff;        
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/* DESPUÉS: Usamos varias técnicas para garantizar contraste mayor en todos los fondos posibles */
+
+.hero-title {
+  color: #ffffff;
+
+  /* Técnica 1: sombra de texto */
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.85), /* sombra principal oscura */
+    0 2px 8px rgba(0, 0, 0, 0.60); /* sombra difusa de apoyo */
+
+  font-size: 48px;
+  font-weight: 700;
+}
+
+/* Técnica 2: overlay oscuro semitransparente */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cubre toda la sección */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%, /* más oscuro arriba */
+    rgba(0, 0, 0, 0.20) 60%, /* se aclara hacia abajo */
+    rgba(0, 0, 0, 0.00) 100%
+  );
+  z-index: 1; /* por encima de la imagen */
+  pointer-events: none; /* no bloquea clics */
+}
+
+/* El texto debe estar por encima del overlay */
+.hero-title {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+```
+
+---
+
+
+
+---
+
 ## 6. Herramientas utilizadas en el proyecto de la Escuela Española de Vela
 
 | Herramienta | Uso en la auditoría | Enlace |
