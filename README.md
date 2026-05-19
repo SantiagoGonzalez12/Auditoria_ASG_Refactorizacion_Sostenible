@@ -224,8 +224,13 @@ Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla
   color: #ffffff;
 }
 ```
+---
+
+## 4. Fase 3 – Dimensión de Gobernanza y Ética (G)
+### 4.1 Transparencia en la gestión de cookies
 
 ---
+
 ## 5. Fase 4 – Propuesta de Refactorización Green Coding
 
 ### 5.1 Optimización de activos Dimensión A
@@ -242,8 +247,6 @@ Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla
 **Proceso de conversión recomendado:**
 
 ```bash
-cwebp -q 80 IMG_9883-scaled.jpg -o clases-catamaran-islantilla.webp
-
 # Conversión de toda una carpeta con un bucle Bash
 for file in *.jpg *.png; do
   cwebp -q 80 "$file" -o "${file%.*}.webp"
@@ -583,7 +586,6 @@ AAplicanbdolo a esta web, si reducimos el peso de `escuela-vela.com` de 4 MB a 1
 | **Service Worker (offline-first)** | Sirve páginas ya visitadas desde disco local → cero peticiones al servidor |
 | **Escalado responsable** | Si el tráfico crece, escalar solo con infraestructura verde (AWS Graviton, Azure + energía renovable) |
 
----
 ---
 
 ## 6. Herramientas utilizadas en el proyecto de la Escuela Española de Vela
