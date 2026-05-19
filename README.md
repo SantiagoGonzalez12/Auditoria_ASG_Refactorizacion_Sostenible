@@ -129,3 +129,16 @@ Herramientas utilizadas: **WAVE Web Accessibility Evaluation Tool** y **Lighthou
 | **WAVE** | 4+ errores graves aparece en rojo, 8+ alertas (amarillo) |
 
 ---
+## 6. Herramientas utilizadas en el proyecto de la Escuela Española de Vela
+
+| Herramienta | Uso en la auditoría | Enlace |
+|---|---|---|
+| **Website Carbon Calculator** | Medición de g CO₂ por visita | [websitecarbon.com](https://www.websitecarbon.com) |
+| **Google Lighthouse** | Performance, Accessibility, Best Practices, SEO | [Chrome DevTools](https://developer.chrome.com/docs/lighthouse/overview/) |
+| **WAVE Evaluation Tool** | Errores y alertas de accesibilidad WCAG 2.2 | [wave.webaim.org](https://wave.webaim.org) |
+| **PageSpeed Insights** | Métricas Core Web Vitals reales | [pagespeed.web.dev](https://pagespeed.web.dev) |
+| **Chrome DevTools – Network** | Análisis de recursos y peso de la página | Incluido en Chrome/Edge |
+| **WebAIM Contrast Checker** | Verificación de ratios de contraste WCAG | [webaim.org/resources/contrastchecker](https://webaim.org/resources/contrastchecker/) |
+| **cwebp / ffmpeg** | Conversión de imágenes a WebP y AVIF | [developers.google.com/speed/webp](https://developers.google.com/speed/webp) |
+
+---
