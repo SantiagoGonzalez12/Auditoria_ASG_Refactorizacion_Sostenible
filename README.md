@@ -471,7 +471,119 @@ El **Lazy Loading** esto significa,  que las imágenes que fuera del área visib
 ```
 
 ---
+### 5.4 Banner de cookies conforme al RGPD (Dimensión G)
 
+```html
+<div
+  id="cookie-banner"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookie-titulo"
+  aria-describedby="cookie-desc">
+
+  <div class="cookie-content">
+    <h2 id="cookie-titulo">Usamos cookies</h2>
+    <p id="cookie-desc">
+      Usamos cookies propias (necesarias para que la web funcione) y
+      cookies opcionales de terceros para análisis de visitas.
+      Puedes aceptarlas todas, rechazar las no esenciales o elegir.
+      <a href="/politica-de-cookies" target="_blank" rel="noopener">
+        Más información
+      </a>
+    </p>
+  </div>
+
+  <div class="cookie-actions">
+    <button
+      class="cookie-btn cookie-btn--secondary"
+      onclick="rechazarCookies()"
+      aria-label="Rechazar cookies no esenciales">
+      Rechazar no esenciales
+    </button>
+
+    <button
+      class="cookie-btn cookie-btn--secondary"
+      onclick="abrirPreferencias()"
+      aria-label="Personalizar preferencias de cookies">
+      Personalizar
+    </button>
+
+    <button
+      class="cookie-btn cookie-btn--primary"
+      onclick="aceptarCookies()"
+      aria-label="Aceptar todas las cookies">
+      Aceptar todas
+    </button>
+  </div>
+
+</div>
+
+<style>
+  /* Banner fijo en la parte inferior de la pantalla */
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    color: #f0f0f0;
+    padding: 20px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    z-index: 9999;
+    border-top: 3px solid #0078d4;
+  }
+
+  .cookie-content { flex: 1; min-width: 260px; }
+  .cookie-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Base con el tamaño para los tres botones */
+  .cookie-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid #0078d4;
+    min-width: 160px;
+    transition: opacity 0.2s;
+  }
+
+  /* Botón primario que tiene fondo azul */
+  .cookie-btn--primary {
+    background: #0078d4;
+    color: #ffffff;
+  }
+
+  .cookie-btn--secondary {
+    background: transparent;
+    color: #f0f0f0;
+  }
+
+</style>
+```
+
+---
+
+### 5.5 Reflexión sobre la Paradoja de Jevons
+
+La Paradoja de Jevons economista William Stanley Jevons, 1865 establece que cuando la eficiencia en el uso de un recurso mejora, el consumo total de ese recurso tiende a crecer, porque la mayor eficiencia lo hace más accesible.
+
+AAplicanbdolo a esta web, si reducimos el peso de `escuela-vela.com` de 4 MB a 1 MB, la web cargará más rápido, mejorará su posicionamiento SEO, atraerá más visitantes, y el consumo energético total podría **superar al original** aunque cada visita individual sea más ligera.
+
+**Medidas para evitar que el ahorro sea absorbido por el crecimiento del tráfico:**
+
+| Medida | Descripción técnica |
+|---|---|
+| **Hosting verde certificado** | Migrar a un proveedor con energía 100% renovable (ej. Infomaniak, GreenGeeks, OVH Green) |
+| **CDN con compensación de carbono** | Cloudflare reduce la distancia de los datos al usuario y opera con energía compensada |
+| **Caché agresiva** | `Cache-Control:  Para activos estáticos — los usuarios recurrentes no re-descargan nada |
+| **Service Worker (offline-first)** | Sirve páginas ya visitadas desde disco local → cero peticiones al servidor |
+| **Escalado responsable** | Si el tráfico crece, escalar solo con infraestructura verde (AWS Graviton, Azure + energía renovable) |
+
+---
 ---
 
 ## 6. Herramientas utilizadas en el proyecto de la Escuela Española de Vela
