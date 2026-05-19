@@ -194,7 +194,7 @@ Un lector de pantalla como *NVDA* o *JAWS*, usado por personas con discapacidad 
 ### 3.3 Problema grave 2 - Bajo contraste de texto sobre imágenes
 Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla`) se muestran con un texto blanco directamente en la imagen de colores. En varias partes de la imagen, el contraste entre el texto y esta es muy pobre, por lo que no se diferencian muy bien y dan lugar a confusión.
 
-```html
+```css
 /* ANTES: texto blanco puro sobre imagen de fondo variable */
 
 .hero-title {
