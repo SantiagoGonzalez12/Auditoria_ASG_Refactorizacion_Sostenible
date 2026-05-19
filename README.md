@@ -241,7 +241,57 @@ Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla
 ```
 
 ---
+## 5. Fase 4 – Propuesta de Refactorización Green Coding
 
+### 5.1 Optimización de activos Dimensión A
+
+#### 5.1.1 Conversión de imágenes a formatos modernos
+
+| Situación actual | Solución propuesta | Ahorro estimado |
+|---|---|---|
+| Imágenes JPG de galería | Convertir a **WebP** | 30–50% menos peso |
+| Logos y gráficos PNG con transparencia | Convertir a WebP con canal alfa | 25–35% menos peso |
+| GIF animado (`logo-visas-gif.gif`) | Sustituir por SVG estático | 70–90% menos peso |
+| Imágenes de fondo decorativas | Formato AVIF | 50–60% menos peso |
+
+**Proceso de conversión recomendado:**
+
+```bash
+cwebp -q 80 IMG_9883-scaled.jpg -o clases-catamaran-islantilla.webp
+
+# Conversión de toda una carpeta con un bucle Bash
+for file in *.jpg *.png; do
+  cwebp -q 80 "$file" -o "${file%.*}.webp"
+done
+# Para imágenes con transparencia, añadir el flag -alpha_q```
+
+**Implementación con `<picture>` para compatibilidad total de navegadores:**
+
+```html
+
+<picture>
+  <!-- Para navegadores modernos: AVIF (máxima compresión) -->
+  <source
+    srcset="/assets/img/clases-catamaran-islantilla.avif"
+    type="image/avif">
+
+  <!-- Para navegadores con soporte WebP pero sin AVIF -->
+  <source
+    srcset="/assets/img/clases-catamaran-islantilla.webp"
+    type="image/webp">
+
+  <!-- Fallback: JPG para navegadores antiguos. -->
+  <img
+    src="/assets/img/clases-catamaran-islantilla.jpg"
+    alt="Grupo de alumnos practicando catamarán en la playa de Islantilla"
+    loading="lazy"
+    decoding="async"
+    width="1024"
+    height="682">
+</picture>
+```
+
+---
 
 
 ---
