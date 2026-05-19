@@ -68,9 +68,9 @@ Análisis realizado con la pestaña **Network** de Chrome DevTools, filtrando po
 La galería principal contiene imágenes directamente exportadas de dispositivos móviles, como `IMG_9883-scaled.jpg` o `IMG_6307-1024x682.png`, con pesos que superan los 800 KB por imagen lo cual hace que sea mas lento el tiempo de carga. Ninguna está en formato moderno (WebP/AVIF) ni tiene dimensiones adaptadas al tamaño en pantalla.
 
 ```
-Recurso:  /wp-content/uploads/2018/11/IMG_9883-scaled.jpg
+Recurso: /wp-content/uploads/2018/11/IMG_9883-scaled.jpg
 Tipo: image/jpeg
-Peso:  ~820 KB
+Peso: ~820 KB
 ```
 
 ---
@@ -129,3 +129,49 @@ Herramientas utilizadas: **WAVE Web Accessibility Evaluation Tool** y **Lighthou
 | **WAVE** | 4+ errores graves aparece en rojo, 8+ alertas (amarillo) |
 
 ---
+
+### 3.2 Problema grave 1 - Atributos _alt_ ausentes o no descriptivos
+Todas las imágenes de la web utilizan como atributo _alt_ el nombre del fichero tal cual fue subido al servidor, o directamente tienen el atributo vacío.
+
+Un lector de pantalla como *NVDA* o *JAWS*, usado por personas con discapacidad visual, leerá literalmente "IMG guión 9883 guión scaled punto png" en lugar de describir el contenido de la imagen.
+
+```html
+<!--  ANTES: el alt describe el fichero, no el contenido -->
+
+<img src="/wp-content/uploads/2018/10/cropped-eev-1.png"
+     alt="cropped-eev-1.png">
+     <!--  En el lector de pantalla dirá "cropped-eev-1.png" — esto no aporta nada de información -->
+
+<img src="/wp-content/uploads/2018/11/IMG_9883-scaled.jpg"
+     alt="">
+     <!--  Alt vacío en imagen de contenido: el lector de pantalla la ignorará -->
+
+<img src="/wp-content/uploads/2022/07/descarga-150x150.jpg"
+     alt="">
+     <!--  Imagen de categoría "Wing Foil" sin ninguna descripción ya que es demaisado reciente dentro de la web lo que constituye que aun no lo han actulizado la informacioón dentro de la pagina -->
+
+
+<!-- DESPUÉS: el alt describe de forma clara el contenido que hay dentro -->
+
+<!-- Logo principal esto haraimos que funciones como el inicio osea main -->
+<a href="https://www.escuela-vela.com">
+  <img src="/assets/img/logo-eev.webp"
+       alt="Escuela Española de Vela – Ir a la página de inicio"
+       width="200" height="80">
+</a>
+
+<!-- Imagen de galería de contenido -->
+<img src="/assets/img/clases-catamaran-islantilla.webp"
+     alt="Grupo de alumnos practicando catamarán en la playa de Islantilla"
+     loading="lazy"
+     width="1024" height="682">
+
+<!-- Imagen de tarjeta de actividad -->
+<img src="/assets/img/wing-foil-portada.webp"
+     alt="Instructor de Wing Foil demostrando la técnica sobre el agua en Islantilla"
+     loading="lazy"
+     width="150" height="150">
+```
+
+---
+
