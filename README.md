@@ -231,7 +231,7 @@ Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla
 
 La web tiene un **banner de consentimiento** de cookies gestionado por el plugin _CookieYes_. A primera vista dispone de las operaciones "Aceptar" y "Rechazar", pero al analizarla presenta los siguientes problemas:
 ![Banner_Cookies](imagenes/Banner_Cookies.png)
-
+![Rastreo de Cookies](imagenes/Rastreo_Cookies.png)
 **Cookies cargadas antes del consentimiento:**
 
 Al analizar la pestaña Network al cargar la web por primera vez sin haber aceptado las cookies, se ve que ya se realizan peticiones a dominios de terceros:
