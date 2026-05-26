@@ -17,9 +17,8 @@
 3. [Fase 2 – Dimensión Social y Accesibilidad (S)](#3-fase-2--dimensión-social-y-accesibilidad-s)
 4. [Fase 3 – Dimensión de Gobernanza y Ética (G)](#4-fase-3--dimensión-de-gobernanza-y-ética-g)
 5. [Fase 4 – Propuesta de Refactorización Green Coding](#5-fase-4--propuesta-de-refactorización-green-coding)
-6. [Resumen comparativo Antes | Después](#6-resumen-comparativo-antes--después)
-7. [Herramientas utilizadas](#7-herramientas-utilizadas)
-8. [Fuentes y referencias](#8-fuentes-y-referencias)
+6. [Herramientas utilizadas en el proyecto de la Escuela Española de Vela](#6-herramientas-utilizadas-en-el-proyecto-de-la-escuela-española-de-vela)
+7. [Fuentes y referencias](#7-fuentes-y-referencias)
 
 ---
 
