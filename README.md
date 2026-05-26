@@ -229,6 +229,25 @@ Los encabezados principales del _hero_ (`ESCUELA ESPAÑOLA DE VELA`, `Islantilla
 ## 4. Fase 3 – Dimensión de Gobernanza y Ética (G)
 ### 4.1 Transparencia en la gestión de cookies
 
+La web tiene un **banner de consentimiento** de cookies gestionado por el plugin _CookieYes_. A primera vista dispone de las operaciones "Aceptar" y "Rechazar", pero al analizarla presenta los siguientes problemas:
+![Banner_Cookies](imagenes/Banner_Cookies.png)
+
+**Cookies cargadas antes del consentimiento:**
+
+Al analizar la pestaña Network al cargar la web por primera vez sin haber aceptado las cookies, se ve que ya se realizan peticiones a dominios de terceros:
+
+| Cookie / Dominio | Tipo | Problema |
+| --- | --- | --- |
+| `VISITOR_INFO01_LIVE` (YouTube) | Publicidad | Se establece aunque no hay video visible |
+| `vuid` (Vimeo) | Analytics | Rastreo de usuario sin consentimiento |
+| `CONSENT` (Google) | Analytics | Enviado antes de que el usuario decida |
+
+Esto vulnera directamente el principio de **Privacy by Default** del _RGPD_ y la _Directiva ePrivacy_
+
+---
+
+
+
 ---
 
 ## 5. Fase 4 – Propuesta de Refactorización Green Coding
