@@ -246,7 +246,14 @@ Esto vulnera directamente el principio de **Privacy by Default** del _RGPD_ y la
 
 ---
 
+### 4.2 Datos personales en formularios
 
+El formulario de contacto de [escuela-vela.com/contacto/](https://www.escuela-vela.com/contacto/) solicita únicamente: 
+- nombre 
+- email 
+- mensaje 
+
+Esta recopilación es proporcional y necesaria, cumpliendo el principio de minimización de datos del _RGPD_. No hay campos excesivos en el formulario principal.
 
 ---
 
